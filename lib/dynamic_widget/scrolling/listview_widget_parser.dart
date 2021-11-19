@@ -90,7 +90,7 @@ class ListViewWidget extends StatefulWidget {
   final ListViewParams _params;
   final BuildContext _buildContext;
 
-  ListViewWidget(this._params, this._buildContext) : super(key: null);
+  ListViewWidget(this._params, this._buildContext, {Key? key}) : super(key: key);
 
   @override
   _ListViewWidgetState createState() => _ListViewWidgetState(_params);
