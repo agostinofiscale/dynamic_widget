@@ -12,6 +12,7 @@ class ListViewWidgetParser extends WidgetParser {
   Widget parse(Map<String, dynamic> map, BuildContext buildContext,
       ClickListener? listener) {
     var scrollDirection = Axis.vertical;
+
     if (map.containsKey("scrollDirection") &&
         "horizontal" == map["scrollDirection"]) {
       scrollDirection = Axis.horizontal;
@@ -45,7 +46,12 @@ class ListViewWidgetParser extends WidgetParser {
         loadMoreUrl: loadMoreUrl,
         isDemo: isDemo);
 
-    return new ListViewWidget(params, buildContext);
+    var listviewwidget = ListViewWidget(
+      params,     
+      buildContext, key: UniqueKey()
+    );
+    
+    return listviewwidget;
   }
 
   @override
